@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Tracking Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Dashboard</h1>
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="home.html" id="homeLink">Home</a></li>
+                <li><a href="index.html" id="dashboardLink">Dashboard</a></li>
+                <li><a href="settings.html" id="settingsLink">Settings</a></li>
+                <li><a href="logout.html" id="logoutLink">Logout</a></li>
+                <li class="user-profile">
+                    <img src="image/aljhon.jpg" alt="User Icon" id="profilePhoto"/>
+                    <a href="user.html">Aljhon Caangay</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div id="map" class="map"></div>
+        <div class="analytics">
+            <div class="card">
+                <h2>Total Buses</h2>
+                <p id="totalBuses">0</p>
+            </div>
+            <div class="card">
+                <h2>Average Speed</h2>
+                <p id="averageSpeed">0 km/h</p>
+            </div>
+            <div class="card">
+                <h2>Current Location</h2>
+                <p id="currentLocation">N/A</p>
+            </div>
+        </div>
+        <div class="maintenance">
+            <div class="card">
+                <h2>Bus Maintenance</h2>
+                <p id="maintenanceStatus">Status: Up to date</p>
+                <p id="nextMaintenance">Next Maintenance: 2024-09-01</p>
+                <p id="maintenanceIssues">Issues: None</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 40.7128, lng: -74.0060 }, // Default to New York
+                zoom: 12
+            });
+
+            const busData = [
+                { id: 1, lat: 40.730610, lng: -73.935242, speed: 30 },
+                { id: 2, lat: 40.740610, lng: -73.945242, speed: 45 }
+            ];
+
+            busData.forEach(bus => {
+                const marker = new google.maps.Marker({
+                    position: { lat: bus.lat, lng: bus.lng },
+                    map: map,
+                    title: `Bus ${bus.id}`
+                });
+            });
+
+            document.getElementById('totalBuses').textContent = busData.length;
+            const averageSpeed = busData.reduce((sum, bus) => sum + bus.speed, 0) / busData.length;
+            document.getElementById('averageSpeed').textContent = averageSpeed.toFixed(2) + ' km/h';
+            document.getElementById('currentLocation').textContent = `Lat: ${busData[0].lat.toFixed(4)}, Lng: ${busData[0].lng.toFixed(4)}`;
+        }
+
+        window.onload = initMap;
+
+        // JavaScript for selecting menu options
+        document.getElementById('homeLink').addEventListener('click', function() {
+            alert('Navigating to Home...');
+            // Add navigation or other functionality here
+        });
+
+        document.getElementById('dashboardLink').addEventListener('click', function() {
+            alert('Navigating to Dashboard...');
+            // Add navigation or other functionality here
+        });
+
+        document.getElementById('settingsLink').addEventListener('click', function() {
+            alert('Opening Settings...');
+            // Add navigation or other functionality here
+        });
+
+        document.getElementById('logoutLink').addEventListener('click', function() {
+            alert('Logging out...');
+            // Add logout functionality here
+        });
+
+        // Profile photo selection functionality
+        document.getElementById('profilePhoto').addEventListener('click', function() {
+            const newPhoto = prompt("Enter the URL of the new profile photo:");
+            if (newPhoto) {
+                document.getElementById('profilePhoto').src = newPhoto;
+            }
+        });
+    </script>
+</body>
+</html>

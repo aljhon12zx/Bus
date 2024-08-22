@@ -1,0 +1,597 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.header {
+    background-color: #0077ff;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    position:relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0.93;
+}
+
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Menu Bar Styles */
+.menu-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar ul li {
+    margin-left: 20px;
+}
+
+.menu-bar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.menu-bar ul li a:hover {
+    background-color: #3e8e41;
+}
+
+.menu-bar .user-profile {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.menu-bar .user-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.menu-bar .user-profile span {
+    color: white;
+}
+
+/* Map Section */
+.map {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0.83;
+}
+
+/* Cards for Analytics and Maintenance */
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    flex: 1;
+    opacity: 0.83;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 0;
+}
+
+/* Layout for Analytics and Maintenance Sections */
+.analytics, .maintenance {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Specific Styles for Maintenance Section */
+.maintenance .card {
+    background-color: #fff3cd;
+    border-color: #ffc107;
+    opacity: 0.80;
+}
+
+.maintenance .card h2 {
+    color: #856404;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .analytics, .maintenance {
+        flex-direction: column;
+    }
+    
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.2em;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+    
+    .menu-bar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .menu-bar ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    
+    .menu-bar ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+/* General Styles for Home Page */
+.home-content {
+    padding: 20px;
+}
+
+.home-content h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card p, .card ul {
+    font-size: 1.2em;
+    color: #555;
+    margin: 0;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+}
+
+.card ul li a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.card ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure responsive design for home page */
+@media (max-width: 768px) {
+    .overview {
+        flex-direction: column;
+    }
+    
+    .card {
+        width: 100%;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('image/bus\ background.jpg');
+    background-size: cover; /* Makes the background cover the entire page */
+    background-position: center;
+    position: relative /* Centers the background image */
+    background-repeat: no-repeat;
+    opacity: 93; /* Prevents the background image from repeating */
+}
+/* User Profile Section Styles */
+.user-profile-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    opacity: 0.85;
+}
+
+.user-profile-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.user-profile-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.user-profile-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.profile-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+    margin-bottom: 10px;
+}
+
+.profile-photo button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.profile-photo button:hover {
+    background-color: #45a049;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile-details p {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.profile-details strong {
+    color: #333;
+}
+
+/* Profile Update Form Styles */
+.profile-update-form {
+    margin-top: 20px;
+}
+
+.profile-update-form h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile-update-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-update-form label {
+    font-weight: bold;
+}
+
+.profile-update-form input {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.profile-update-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.profile-update-form button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .user-profile-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-photo {
+        align-items: flex-start;
+    }
+
+    .profile-photo img {
+        width: 80px;
+        height: 80px;
+    }
+}
+/* Settings Page Styles */
+.settings-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    opacity: 0.83;
+}
+
+.settings-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.settings-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+legend {
+    font-size: 1.2em;
+    color: #333;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .settings-content {
+        flex-direction: column;
+    }
+}
+/* Logout Page Styles */
+.logout-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+    opacity: 0.83;
+}
+
+.logout-section h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.logout-section p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+    opacity: 0.83;
+}
+
+.logout-section button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.logout-section button:hover {
+    background-color: #45a049;
+}
+
+/* Header and Menu Bar */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar ul li {
+    margin-left: 20px;
+}
+
+.menu-bar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.menu-bar ul li a:hover {
+    background-color: #3e8e41;
+}
+/* Login Page Styles */
+.login-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+    text-align: center;
+    opacity: 0.83;
+}
+
+.login-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.login-section label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.login-section input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.login-section button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.login-section button:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+

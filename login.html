@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Login</h1>
+    </header>
+    <div class="login-section">
+        <h2>Welcome Back</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Retrieve form values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Basic validation (for illustration)
+            if (username === "" || password === "") {
+                document.getElementById('errorMessage').textContent = 'Please fill in all fields.';
+                return;
+            }
+
+            // For illustration purposes: simulate login
+            if (username === 'admin' && password === 'password') {
+                // Simulate successful login
+                window.location.href = 'dashboard.html'; // Redirect to the dashboard
+            } else {
+                // Show error message
+                document.getElementById('errorMessage').textContent = 'Invalid username or password.';
+            }
+        });
+    </script>
+</body>
+</html>

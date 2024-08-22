@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Bus Tracking System </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Bus Tracking System Using GPS with Data Analytics</h1>
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="home.html" id="homeLink">Home</a></li>
+                <li><a href="index.html" id="dashboardLink">Dashboard</a></li>
+                <li><a href="settings.html" id="settingsLink">Settings</a></li>
+                <li><a href="logout.html" id="logoutLink">Logout</a></li>
+                <li class="user-profile">
+                    <img src="image/aljhon.jpg" alt="User Icon" id="profilePhoto"/>
+                    <a href="user.html">Aljhon Caangay</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="home-content">
+            <h2>Welcome to the Bus Tracking System</h2>
+            <p>Here you can monitor bus locations, track performance metrics, and manage bus maintenance.</p>
+            <div class="overview">
+                <div class="card">
+                    <h2>Recent Activities</h2>
+                    <p id="recentActivities">No recent activities.</p>
+                </div>
+                <div class="card">
+                    <h2>System Status</h2>
+                    <p id="systemStatus">All systems are operational.</p>
+                </div>
+                <div class="card">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="index.html">Go to Dashboard</a></li>
+                        <li><a href="settings.html">Open Settings</a></li>
+                        <li><a href="logout.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for profile photo selection
+        document.getElementById('profilePhoto').addEventListener('click', function() {
+            const newPhoto = prompt("Enter the URL of the new profile photo:");
+            if (newPhoto) {
+                document.getElementById('profilePhoto').src = newPhoto;
+            }
+        });
+    </script>
+</body>
+</html>

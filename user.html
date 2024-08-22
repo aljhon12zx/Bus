@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>User Profile</h1>
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="logout.html">Logout</a></li>
+                <li class="user-profile">
+                    <img src="image/aljhon.jpg" alt="User Icon" id="profilePhoto"/>
+                    <a href="user.html">Aljhon Caangay</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="user-profile-section">
+        <div class="user-profile-header">
+            <h2>Your Profile</h2>
+        </div>
+        <div class="user-profile-content">
+            <div class="profile-photo">
+                <img src="image/aljhon.jpg" alt="Profile Photo" id="profilePhoto"/>
+                <button id="changePhotoBtn">Change Photo</button>
+            </div>
+            <div class="profile-details">
+                <p><strong>Name:</strong> <span id="userName">Aljhon Caangay</span></p>
+                <p><strong>Email:</strong> <span id="userEmail">aljhoncaangay@gmail.com</span></p>
+                <p><strong>Role:</strong> <span id="userRole">Administrator</span></p>
+            </div>
+        </div>
+        <div class="profile-update-form">
+            <h3>Update Profile</h3>
+            <form id="updateProfileForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="Aljhon Caangay" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="aljhoncaangay@gmail.com" required>
+                
+                <label for="role">Role:</label>
+                <input type="text" id="role" name="role" value="Administrator" required>
+                
+                <button type="submit">Update Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('changePhotoBtn').addEventListener('click', function() {
+            const newPhoto = prompt("Enter the URL of the new profile photo:");
+            if (newPhoto) {
+                document.getElementById('profilePhoto').src = newPhoto;
+            }
+        });
+
+        document.getElementById('updateProfileForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Retrieve updated values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const role = document.getElementById('role').value;
+            
+            // Update the profile details (this is where you would normally make an API call)
+            document.getElementById('userName').textContent = name;
+            document.getElementById('userEmail').textContent = email;
+            document.getElementById('userRole').textContent = role;
+            
+            alert('Profile updated successfully!');
+        });
+    </script>
+</body>
+</html>

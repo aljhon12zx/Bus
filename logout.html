@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Logout</h1>
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="logout-section">
+        <h2>You have been logged out.</h2>
+        <p>Thank you for using our system. You have been successfully logged out.</p>
+        <button id="loginBtn">Login Again</button>
+    </div>
+
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            // Perform any necessary cleanup (e.g., clearing session data)
+            // Redirect to the login page
+            window.location.href = 'login.html'; // Replace with the actual login page URL
+        });
+
+        // Optional: Automatically redirect after a delay (e.g., 5 seconds)
+        setTimeout(function() {
+            window.location.href = 'login.html'; // Replace with the actual login page URL
+        }, 5000); // Redirect after 5 seconds
+    </script>
+</body>
+</html>

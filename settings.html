@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Settings</h1>
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="user.html">Profile</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="settings-section">
+        <div class="settings-header">
+            <h2>Account Settings</h2>
+        </div>
+        <div class="settings-content">
+            <form id="settingsForm">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" value="Aljhon Caangay" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="aljhoncaangay@gmail.com" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter new password">
+                    
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Notification Preferences</legend>
+                    <label for="emailNotifications">Email Notifications:</label>
+                    <select id="emailNotifications" name="emailNotifications">
+                        <option value="all">All</option>
+                        <option value="important">Important Only</option>
+                        <option value="none">None</option>
+                    </select>
+                    
+                    <label for="smsNotifications">SMS Notifications:</label>
+                    <select id="smsNotifications" name="smsNotifications">
+                        <option value="all">All</option>
+                        <option value="important">Important Only</option>
+                        <option value="none">None</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Privacy Settings</legend>
+                    <label for="profileVisibility">Profile Visibility:</label>
+                    <select id="profileVisibility" name="profileVisibility">
+                        <option value="public">Public</option>
+                        <option value="friends">Friends Only</option>
+                        <option value="private">Private</option>
+                    </select>
+                    
+                    <label for="dataSharing">Data Sharing:</label>
+                    <select id="dataSharing" name="dataSharing">
+                        <option value="all">Share All Data</option>
+                        <option value="minimal">Share Minimal Data</option>
+                        <option value="none">Do Not Share</option>
+                    </select>
+                </fieldset>
+
+                <button type="submit">Save Settings</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('settingsForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Retrieve form values
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const emailNotifications = document.getElementById('emailNotifications').value;
+            const smsNotifications = document.getElementById('smsNotifications').value;
+            const profileVisibility = document.getElementById('profileVisibility').value;
+            const dataSharing = document.getElementById('dataSharing').value;
+
+            // Basic validation (for illustration)
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            // Normally, you would send this data to a server using an AJAX call here
+            alert('Settings saved successfully!');
+        });
+    </script>
+</body>
+</html>
